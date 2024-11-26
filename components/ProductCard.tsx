@@ -1,3 +1,4 @@
+import { ProductCardProps } from "@/types/productCardProps";
 import Image from "next/image";
 export function ProductCard({
   src,
@@ -7,15 +8,7 @@ export function ProductCard({
   title,
   price,
   inStock = true,
-}: {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  title: string;
-  price: string;
-  inStock?: boolean;
-}) {
+}: ProductCardProps) {
   return (
     <div className="group">
       <div className="aspect-square bg-muted rounded-lg overflow-hidden">
