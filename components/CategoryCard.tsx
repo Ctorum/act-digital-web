@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import Cute from "@/public/cute.jpg";
 
 export function CategoryCard() {
   return (
     <div className="grid gap-6 md:grid-cols-3">
       {[
-        { name: "Camisetas", image: "/placeholder.svg" },
+        {
+          name: "Camisetas",
+          image: Cute,
+        },
         { name: "Calças", image: "/placeholder.svg" },
         { name: "Acessórios", image: "/placeholder.svg" },
       ].map((category, index) => (
