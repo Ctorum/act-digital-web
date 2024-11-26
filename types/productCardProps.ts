@@ -6,4 +6,5 @@ export interface ProductCardProps {
   title: string;
   price: string;
   inStock?: boolean;
+  show?: boolean;
 }

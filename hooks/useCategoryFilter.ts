@@ -1,8 +1,8 @@
 import { Category } from "@/types/categoryProps";
 import { useState } from "react";
 
-export const useCategoryFilter = (initialCategories: Category[]) => {
-  const [categories, setCategories] = useState<Category[]>(initialCategories);
+export const useCategoryFilter = () => {
+  const [categories, setCategories] = useState<Category[]>([]);
 
   const handleCategoryChange = (categoryId: string) => {
     setCategories(
@@ -12,5 +12,9 @@ export const useCategoryFilter = (initialCategories: Category[]) => {
     );
   };
 
-  return { categories, handleCategoryChange };
+  const checkedCategories = categories
+    .filter((cat) => cat.checked)
+    .map((cat) => cat.name);
+
+  return { categories, setCategories, handleCategoryChange, checkedCategories };
 };

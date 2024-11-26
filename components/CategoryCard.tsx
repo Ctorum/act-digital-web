@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import Cute from "@/public/cute.jpg";
+import Shirts from "@/public/shirts.jpg";
+import Jeans from "@/public/jeans.jpg";
+import Acessories from "@/public/acessories.jpg";
 
 export function CategoryCard() {
   return (
@@ -8,10 +10,10 @@ export function CategoryCard() {
       {[
         {
           name: "Camisetas",
-          image: Cute,
+          image: Shirts,
         },
-        { name: "Calças", image: "/placeholder.svg" },
-        { name: "Acessórios", image: "/placeholder.svg" },
+        { name: "Calças", image: Jeans },
+        { name: "Acessórios", image: Acessories },
       ].map((category, index) => (
         <Link key={index} href={`/categorias/${category.name.toLowerCase()}`}>
           <div className="group relative aspect-[2/1] overflow-hidden rounded-lg">

@@ -1,3 +1,4 @@
+"use client";
 import { PromotionBanner } from "@/components/PromotionBanner";
 import { Header } from "@/components/Header";
 import { HighlightProducts } from "@/components/HighlightProducts";
@@ -6,8 +7,11 @@ import { Footer } from "@/components/Footer";
 import { mainNavigation } from "@/lib/constants";
 import { HeroSection } from "@/components/HeroSection";
 import { ProductSection } from "@/components/ProductsSection";
+import { useProducts } from "@/hooks/useProducts";
 
 export default function Home() {
+  const { products } = useProducts();
+
   return (
     <div className="flex min-h-screen flex-col">
       <PromotionBanner />
@@ -22,7 +26,7 @@ export default function Home() {
       />
 
       <ProductSection title="Produtos em destaque">
-        <HighlightProducts />
+        <HighlightProducts products={products} />
       </ProductSection>
 
       <ProductSection title="Categorias">

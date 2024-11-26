@@ -8,7 +8,10 @@ export function ProductCard({
   title,
   price,
   inStock = true,
+  show = true,
 }: ProductCardProps) {
+  if (!show) return null;
+
   return (
     <div className="group">
       <div className="aspect-square bg-muted rounded-lg overflow-hidden">
@@ -21,7 +24,7 @@ export function ProductCard({
         />
       </div>
       <div className="mt-3 space-y-1">
-        <h3 className="font-medium">{title}</h3>
+        <h3 className="font-medium line-clamp-2 min-h-20">{title}</h3>
         <div className="flex items-center justify-between text-sm">
           {inStock ? (
             <span className="bg-green-100 text-green-700 px-2 py-0.5 rounded">
